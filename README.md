@@ -16,7 +16,7 @@ Learn how to install Alamofire here using their instructions: https://github.com
 After that, run the .xcworkspace file associated with Foray, then you should be able to build it just by going into Project > Run in Xcode or hit the Play button on the top pane.
 
 ## Some things won't change yet
-You will notice some content is statically delivered (even in the wrong places!). The current build mostly focuses on the UI/UX aspect. There is a backend connected, and there is plenty of potential given the database setup that we have. However, it's a learning experience for everyone involved, so that potential isn't fully realized. But you do get to look at something pretty, and the controls already in place are ready for when we actually tap into such potential.
+You will notice some content is statically delivered (even in the wrong places!). The current build mostly focuses on the UI/UX aspect. There is no backend connected, and there is plenty of potential given the database setup that we have. However, it's a learning experience for everyone involved, so that potential isn't fully realized. But you do get to look at something pretty, and the controls already in place are ready for when we actually tap into such potential.
 
 ## Missed opportunities
 
