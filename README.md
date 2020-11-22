@@ -22,7 +22,8 @@ You will notice some content is statically delivered (even in the wrong places!)
 - Initially we wanted to make this project cross-platform, and naturally thought of React Native. Due to time constraints, that was not in the cards.
 - Additional views such as Chat
 - Fleshing out commenting capability with replies
-- Learning the ways of SQL, it was no trivial feat creating a backend web API service with the stack we are working with.
+- Learning the ways of SQL properly, it was no trivial feat creating a backend web API service with the stack we are working with.
+- Resolving firewall issues on Microsoft Azure for the web API server
 - Getting this out to you. Seriously -- as we cut it close, the time it takes for Apple to approve through TestFlight through public channels, it would be too late to submit. Therefore this GitHub repo is the best we can do, as much we want you to try out the app itself.
 
 ## Parting words
