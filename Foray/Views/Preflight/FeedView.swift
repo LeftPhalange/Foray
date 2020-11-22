@@ -8,12 +8,28 @@
 import SwiftUI
 
 struct FeedView: View {
+    var CategoriesToShow: [FeedCategory] = [FeedCategory(Category: FeedCategoryType.justPosted, Topic: "⌨️ #programming", PostList: [PostNode(Author: "coder", Title: "How to get started in Python?", Timestamp: Date()), PostNode(Author: "coder_0", Title: "ENOENT \"File not found\" error in React Native", Timestamp: Date()), PostNode(Author: "coder_1", Title: "How to get Xcode?", Timestamp: Date())]), FeedCategory(Category: FeedCategoryType.justPosted, Topic: "🖥 #building", PostList: [PostNode(Author: "coder", Title: "Water or aircooled system?", Timestamp: Date())])]
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
-                    FeedCategory(Category: FeedCategoryType.justPosted, Topic: "⌨️ #programming", PostList: [PostNode(Author: "coder", Title: "How to get started in Python?", Timestamp: Date()), PostNode(Author: "coder_0", Title: "ENOENT \"File not found\" error in React Native", Timestamp: Date()), PostNode(Author: "coder_1", Title: "How to get Xcode?", Timestamp: Date())])
-                    FeedCategory(Category: FeedCategoryType.justPosted, Topic: "🖥 #building", PostList: [PostNode(Author: "coder", Title: "Water or aircooled system?", Timestamp: Date())])
+                    if (CategoriesToShow.count == 0) {
+                        HStack {
+                            Text("Nothing to show. Get into something new and forge new relationships. Visit our Topics tab below.")
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
+                    }
+                    else {
+                        VStack {
+                            ForEach((0..<CategoriesToShow.count), id: \.self) { category in
+                                CategoriesToShow[category]
+                            }
+                        }
+                    }
                 }
             }
             .navigationBarTitle("Feed", displayMode: .large)
@@ -39,12 +55,15 @@ struct PostNode: View {
                     .fontWeight(.regular)
                 Spacer()
             }
-            HStack {
-                Text("\(Title)")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                Spacer()
-                Image (systemName: "chevron.right")
+            NavigationLink (destination: PostView(Title: "How to get started in Python?", Author: "Newcomer", PostContent: "Yeah")) {
+                HStack {
+                    Text("\(Title)")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Image (systemName: "chevron.right")
+                }
+                .foregroundColor(.white)
             }
         }
     }

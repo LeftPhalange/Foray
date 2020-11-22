@@ -1,50 +1,57 @@
 //
-//  RegisterView.swift
+//  AuthenticationView.swift
 //  Foray
-//
+//  View responsible for either registering or authenticating existing accounts.
 //  Created by Ethan Bovard on 11/21/20.
 //
 
 import SwiftUI
 
-struct RegisterView: View {
+struct AuthenticationView: View {
     @State var userNameInput: String = ""
     @State var passwordInput: String = ""
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    var register: Bool
     var body: some View {
         VStack {
             VStack {
-                Text("Foray")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Text("Welcome back! Log in here.")
+                Text(register ? "Welcome! We're glad you're here to foray into something wonderful." : "Welcome back! Log in here.")
                     .fontWeight(.regular)
                 VStack {
                     TextField("User name", text: $userNameInput)
                         .padding(.all, 8.0)
                         .background(RoundedRectangle(cornerRadius: 8.0)
-                                        .foregroundColor(Color.init(red: 0.2, green: 0.2, blue: 0.2)))
+                                        .foregroundColor(returnBackFieldColor()))
                     SecureField("Password", text: $passwordInput)
                         .padding(.all, 8.0)
                         .background(RoundedRectangle(cornerRadius: 8.0)
-                                        .foregroundColor(Color.init(red: 0.2, green: 0.2, blue: 0.2)))
+                                        .foregroundColor(returnBackFieldColor()))
                     HStack {
-                        RegisterButton()
-                        LogOnInstead()
+                        AuthenticateButton(register: true)
+                        AuthenticateConverselyButton(register: true)
                     }
                     .padding(.top)
                     
                 }
                 .padding(.all)
             }
-            .padding(.all)
+        }
+    }
+    func returnBackFieldColor () -> (Color) {
+        if (colorScheme == .dark) {
+            return Color.init(red: 0.2, green: 0.2, blue: 0.2)
+        }
+        else {
+            return Color.init(red: 0.9, green: 0.9, blue: 0.9)
         }
     }
 }
 
-struct RegisterButton: View {
+struct AuthenticateButton: View {
+    var register: Bool
     var body: some View {
         Button(action: functionThatDoesNothing) {
-            Text("Register")
+            Text(register ? "Register" : "Log in")
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
         }
@@ -58,10 +65,11 @@ struct RegisterButton: View {
     }
 }
 
-struct LogOnInstead: View {
+struct AuthenticateConverselyButton: View {
+    var register: Bool
     var body: some View {
         Button(action: functionThatDoesNothing) {
-            Text("Log on instead")
+            Text(register ? "Log on instead" : "Register instead")
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
         }
@@ -75,9 +83,9 @@ struct LogOnInstead: View {
     }
 }
 
-struct RegisterView_Previews: PreviewProvider {
+struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
-            .preferredColorScheme(.dark)
+        AuthenticationView(register: false)
+            
     }
 }

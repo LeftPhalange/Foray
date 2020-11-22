@@ -11,7 +11,7 @@ import SwiftUI
 struct ForayApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTabbedView()
+            ParentView()
         }
     }
 }

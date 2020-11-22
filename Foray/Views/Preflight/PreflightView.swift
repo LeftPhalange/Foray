@@ -9,7 +9,12 @@ import SwiftUI
 
 struct PreflightView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Foray")
+                .font(.title)
+                .fontWeight(.bold)
+            AuthenticationView(register: false)
+        }
     }
 }
 

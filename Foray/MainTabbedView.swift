@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct MainTabbedView: View {
-    var selectionIndex = 1
+    @State var selectionIndex = 1
     var body: some View {
-        TabView {
-            Text("Feed").tabItem {
+        TabView (selection: $selectionIndex) {
+            FeedView().tabItem {
                 TabIcon(iconName: "rectangle.stack.fill", title: "Feed")
             }.tag(1)
+            TopicsView().tabItem {
+                TabIcon(iconName: "sparkles.rectangle.stack.fill", title: "Topics")
+            }.tag(2)
             Text("Settings").tabItem {
                 TabIcon(iconName: "gear", title: "Settings")
-            }.tag(2)
+            }.tag(3)
         }
     }
 }
@@ -37,5 +40,6 @@ struct TabIcon: View {
 struct MainTabbedView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabbedView()
+            .preferredColorScheme(.dark)
     }
 }

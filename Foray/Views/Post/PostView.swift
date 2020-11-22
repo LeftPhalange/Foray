@@ -11,67 +11,69 @@ struct PostView: View {
     var Title: String
     var Author: String
     var PostContent: String
+    @State var Comments: [CommentNode] = []
+    @State var commentCount = 0
     var body: some View {
-        NavigationView {
+        VStack {
+            HStack {
+                Text("in ⌨️ #programming")
+                    .font(.subheadline)
+                    .fontWeight(.heavy)
+                Spacer()
+            }
+            Divider()
+            HStack {
+                Text("@coder • 1 hour ago")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            HStack {
+                Text("How do I set up Python?")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            HStack {
+                Text("Hey #programming, you may be bad enough to tackle coding, but are you bad enough to rescue the president? This is my first dive into programming and looked at languages that looked easy enough, and Python sure enough was one of them. How do I get started? Thanks.")
+                    .font(.subheadline)
+                Spacer()
+            }
             VStack {
                 HStack {
-                    Text("in ⌨️ #programming")
-                        .font(.subheadline)
-                        .fontWeight(.heavy)
-                    Spacer()
-                }
-                Divider()
-                HStack {
-                    Text("@coder • 1 hour ago")
+                    Text("COMMENTS (\(commentCount))")
                         .font(.subheadline)
                         .fontWeight(.bold)
-                    Spacer()
-                }
-                HStack {
-                    Text("How do I set up Python?")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    Spacer()
-                }
-                HStack {
-                    Text("Hey #programming, you may be bad enough to tackle coding, but are you bad enough to rescue the president? This is my first dive into programming and looked at languages that looked easy enough, and Python sure enough was one of them. How do I get started? Thanks.")
-                        .font(.subheadline)
                     Spacer()
                 }
                 VStack {
-                    HStack {
-                        Text("COMMENTS (0)")
+                    Button (action: reply) {
+                        Text("Reply to this thread")
                             .font(.subheadline)
-                            .fontWeight(.bold)
+                            .fontWeight(.semibold)
+                        Image(systemName: "chevron.right")
                         Spacer()
                     }
+                }
+                Divider()
+                ScrollView {
                     VStack {
-                        Button (action: reply) {
-                            Text("Reply to this thread")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                            Image(systemName: "chevron.right")
-                            Spacer()
+                        ForEach((0..<Comments.count), id: \.self) { comment in
+                            Comments[comment]
                         }
                     }
-                    Divider()
-                    ScrollView {
-                        CommentNode(Author: "coder_0", Content: "test", TimeDate: Date())
-                        CommentNode(Author: "coder_0", Content: "test", TimeDate: Date())
-                        CommentNode(Author: "coder_0", Content: "test", TimeDate: Date())
-                        CommentNode(Author: "coder_0", Content: "test", TimeDate: Date())
-                        CommentNode(Author: "coder_0", Content: "test", TimeDate: Date())
-                    }
+                    .animation(.spring())
                 }
-                .padding(.top)
-                Spacer()
             }
-            .padding([.top, .leading, .trailing])
-            .navigationBarTitle("Post", displayMode: .inline)
+            .padding(.top)
+            Spacer()
         }
+        .padding([.top, .leading, .trailing])
+        .navigationBarTitle("Post", displayMode: .inline)
     }
     func reply () {
-        
+        Comments.append(CommentNode(Author: "coder_0", Content: "test", TimeDate: Date()))
+        commentCount = commentCount + 1
     }
 }
 
