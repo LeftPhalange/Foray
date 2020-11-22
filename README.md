@@ -15,14 +15,14 @@ Learn how to install Alamofire here using their instructions: https://github.com
 After that, run the .xcworkspace file associated with Foray, then you should be able to build it just by going into Project > Run in Xcode or hit the Play button on the top pane.
 
 ## Some things won't change yet
-You will notice some content is statically delivered. The current build mostly focuses on the UI/UX aspect. There is a backend connected, and there is plenty of potential given the database setup that we have. However, it's a learning experience for everyone involved, so that potential isn't fully realized. But you do get to look at something pretty, and the controls already in place are ready for when we actually tap into such potential.
+You will notice some content is statically delivered (even in the wrong places!). The current build mostly focuses on the UI/UX aspect. There is a backend connected, and there is plenty of potential given the database setup that we have. However, it's a learning experience for everyone involved, so that potential isn't fully realized. But you do get to look at something pretty, and the controls already in place are ready for when we actually tap into such potential.
 
 ## Missed opportunities
 
-- Initially we wanted to make this project cross-platform, and naturally thought of React Native. However due to time constraints, that was not in the cards.
+- Initially we wanted to make this project cross-platform, and naturally thought of React Native. Due to time constraints, that was not in the cards.
 - Additional views such as Chat
 - Fleshing out commenting capability with replies
 - Getting this out to you. Seriously -- as we cut it close, the time it takes for Apple to approve through TestFlight through public channels, it would be too late to submit. Therefore this GitHub repo is the best we can do, as much we want you to try out the app itself.
 
 ## Parting words
-We've learned a lot from this project, facing innumerable challenges, having us wish we had more forethought about what kind of stack to use to execute that wonderful app idea in an optimal fashion. Microsoft's challenge intended on empowering people with the power of Azure, and we hope with the ongoing pandemic that you can do something that you've wanted to get into, now that we're all at home more.
+We've learned a lot from this project, facing innumerable challenges, having us wish we had more forethought about what kind of stack to use to execute that wonderful app idea in an ideal fashion. Microsoft's challenge intended on empowering people with the power of Azure, and we hope with the ongoing pandemic that you can do something that you've wanted to get into, now that we're all at home more.
