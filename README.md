@@ -1,5 +1,5 @@
 # Foray
-iOS community-driven app that inspires people to foray into new hobbies and interests. Developed for HackGSU Fall 2020 using Azure.
+iOS community-driven app that inspires people to foray into new hobbies and interests. Developed for HackGSU Fall 2020 using Microsoft Azure.
 
 ## How this app came to be
 When the COVID-19 pandemic hit earlier this year, we find ourselves at home a lot more, finding hobbies and interests to keep ourselves occupied, or to rekindle interests from years past. While the Internet provides great resources, people feel empowered to do more if they have the confidence, and to best achieve that they can harness the power of community. Foray intends to be that extra resource to rely on by talking to people of common ground, inspiring confidence to be the very best that you can be.
