@@ -5,7 +5,8 @@ iOS community-driven app that inspires people to foray into new hobbies and inte
 When the COVID-19 pandemic hit earlier this year, we find ourselves at home a lot more, finding hobbies and interests to keep ourselves occupied, or to rekindle interests from years past. While the Internet provides great resources, people feel empowered to do more if they have the confidence, and to best achieve that they can harness the power of community. Foray intends to be that extra resource to rely on by talking to people of common ground, inspiring confidence to be the very best that you can be.
 
 ## What is this developed in?
-SwiftUI, the newest iOS UI framework from Apple. The repository was initialized with Xcode 12.1, but was not tested elsewhere. Target framework is iOS 14.0 minimum due to newer SwiftUI implementations in place. On the backend side, we used Python with the Flask framework, which enables requesting through the API service that interfaces with the Azure SQL server we have.
+- SwiftUI, the newest iOS UI framework from Apple. The repository was initialized with Xcode 12.1, but was not tested elsewhere. Target framework is iOS 14.0 minimum due to newer SwiftUI implementations in place.
+- On the backend side, we used Python with the Flask framework, which enables requesting through the API service that interfaces with the Azure SQL server we have. This is not included in the repository.
 
 ## Sweet! How can I get started?
 You will need Xcode 12.1 at least, and run the .xcworkspace file in the root of the Foray repository. You also need CocoaPods to install Alamofire, to reliably send HTTP requests to our endpoint service. While installing a new pod, be sure you are in the working directory of the repo where the project file is.
